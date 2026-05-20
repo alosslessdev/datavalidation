@@ -1,0 +1,20 @@
+[
+    {
+        "column": "Age",
+        "expectation": "Not Null",
+        "failed": 177,
+        "success": false
+    },
+    {
+        "column": "Fare",
+        "expectation": "Positive Values",
+        "failed": 0,
+        "success": true
+    },
+    {
+        "column": "Survived",
+        "expectation": "Binary Values",
+        "failed": 0,
+        "success": true
+    }
+]
