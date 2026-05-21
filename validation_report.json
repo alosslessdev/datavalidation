@@ -1,0 +1,17 @@
+{
+  "grupo": "Grupo 1: Data Governance y Calidad de Datos",
+  "framework": "Great Expectations v1.17.2",
+  "dataset": "Titanic (Kaggle)",
+  "total_expectations": 21,
+  "passed": 20,
+  "failed": 1,
+  "success_rate": 95.2,
+  "failed_details": [
+    {
+      "expectation": "expect_column_value_lengths_to_be_between",
+      "column": "Cabin",
+      "unexpected_count": 8,
+      "unexpected_percent": 3.9215686274509802
+    }
+  ]
+}

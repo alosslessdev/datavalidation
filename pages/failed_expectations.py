@@ -3,23 +3,25 @@ import pandas as pd
 
 from validations.gx_validator import validate_dataset
 
+st.set_page_config(page_title="Failed Expectations", layout="wide")
 
-def show_failed_expectations(df):
+st.header("Failed Expectations")
 
-    st.header("Failed Expectations")
+if "df" not in st.session_state:
+    st.warning("No dataset loaded. Go to the main page and upload a CSV file.")
+    st.stop()
 
-    results = validate_dataset(df)
+df = st.session_state["df"]
 
-    failed = [
-        r for r in results
-        if not r["success"]
-    ]
+results = validate_dataset(df)
 
-    if failed:
+failed = [
+    r for r in results
+    if not r["success"]
+]
 
-        failed_df = pd.DataFrame(failed)
-
-        st.dataframe(failed_df)
-
-    else:
-        st.success("No failed expectations found.")
+if failed:
+    failed_df = pd.DataFrame(failed)
+    st.dataframe(failed_df)
+else:
+    st.success("No failed expectations found.")

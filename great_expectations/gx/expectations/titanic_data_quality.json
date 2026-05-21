@@ -1,0 +1,249 @@
+{
+  "expectations": [
+    {
+      "id": "22d283a9-b2a3-4683-8d2e-eee657727be1",
+      "kwargs": {
+        "column_list": [
+          "PassengerId",
+          "Survived",
+          "Pclass",
+          "Name",
+          "Sex",
+          "Age",
+          "SibSp",
+          "Parch",
+          "Ticket",
+          "Fare",
+          "Cabin",
+          "Embarked"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_ordered_list"
+    },
+    {
+      "id": "70242959-b5f0-4b39-94a3-53ced611e2bb",
+      "kwargs": {
+        "column": "PassengerId"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "84a1bc95-a76b-451a-98d9-0d70e19a9b8a",
+      "kwargs": {
+        "column": "Survived"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "8bdc4525-7bc2-46f2-a93c-b21791432010",
+      "kwargs": {
+        "column": "Name"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "dfacfdce-4eae-48bd-87e0-8779df1a1e07",
+      "kwargs": {
+        "column": "Sex"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "1ea73f5e-0c6e-4e45-9c1c-09398aed9275",
+      "kwargs": {
+        "column": "Pclass"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5cfb6e4b-8cf7-4ce5-9467-7112c3a2a2e5",
+      "kwargs": {
+        "column": "Fare"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "b8c14ae1-e45a-47a2-a99f-3ed1f7b92966",
+      "kwargs": {
+        "column": "Survived",
+        "value_set": [
+          0,
+          1
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "b6d739e6-25d2-46a6-99b3-4b037bbdcbe7",
+      "kwargs": {
+        "column": "Sex",
+        "value_set": [
+          "male",
+          "female"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "e1edfcde-f29d-4df7-925e-26f90512ca68",
+      "kwargs": {
+        "column": "Pclass",
+        "value_set": [
+          1,
+          2,
+          3
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "75d0d029-3514-40b6-8c09-377935d330c5",
+      "kwargs": {
+        "column": "Embarked",
+        "value_set": [
+          "S",
+          "C",
+          "Q"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "d74181be-0eee-4893-9216-467c4d615dbb",
+      "kwargs": {
+        "column": "Age",
+        "max_value": 100.0,
+        "min_value": 0.0,
+        "mostly": 0.95
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "286ba166-0f9a-4701-89a2-1980dd62a3f1",
+      "kwargs": {
+        "column": "Fare",
+        "max_value": 600.0,
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "3f170d63-03e5-4bc6-8325-0e40b1e0f0c4",
+      "kwargs": {
+        "column": "SibSp",
+        "max_value": 10.0,
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "e8fdebbf-4676-4e63-8127-1f68bdf0d0cb",
+      "kwargs": {
+        "column": "Parch",
+        "max_value": 10.0,
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "8986b170-daae-4243-9b42-3fc6a338ded3",
+      "kwargs": {
+        "column": "PassengerId"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "4b1ab42a-a5b6-4dce-9f5b-b927ee1b5eb8",
+      "kwargs": {
+        "column": "Name",
+        "max_value": 100,
+        "min_value": 2
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_value_lengths_to_be_between"
+    },
+    {
+      "id": "c13563a5-c758-4744-be01-c4e03fce58e8",
+      "kwargs": {
+        "column": "Cabin",
+        "max_value": 10,
+        "min_value": 1
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_value_lengths_to_be_between"
+    },
+    {
+      "id": "1fc3d47a-0d77-44fa-b07b-5d2d1fb4d770",
+      "kwargs": {
+        "column": "Age",
+        "max_value": 35.0,
+        "min_value": 25.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_mean_to_be_between"
+    },
+    {
+      "id": "b5e45ab0-122d-4141-bb07-bcce438edab2",
+      "kwargs": {
+        "column": "Age",
+        "max_value": 32.0,
+        "min_value": 25.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_median_to_be_between"
+    },
+    {
+      "id": "36a2a7d8-27b8-4b4a-8fc5-30da6c6254c4",
+      "kwargs": {
+        "column": "Age",
+        "max_value": 20.0,
+        "min_value": 10.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_stdev_to_be_between"
+    }
+  ],
+  "id": "e8717555-8f43-432c-93df-919231672935",
+  "meta": {
+    "great_expectations_version": "1.17.2"
+  },
+  "name": "titanic_data_quality",
+  "notes": null
+}

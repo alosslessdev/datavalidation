@@ -3,24 +3,29 @@ import pandas as pd
 
 from utils.charts import show_null_chart
 
+st.set_page_config(page_title="Dataset Analysis", layout="wide")
 
-def show_analysis(df):
+st.header("Dataset Analysis")
 
-    st.header("Dataset Analysis")
+if "df" not in st.session_state:
+    st.warning("No dataset loaded. Go to the main page and upload a CSV file.")
+    st.stop()
 
-    st.subheader("Dataset Preview")
+df = st.session_state["df"]
 
-    st.dataframe(df.head())
+st.subheader("Dataset Preview")
 
-    st.subheader("Missing Values")
+st.dataframe(df.head())
 
-    nulls = df.isnull().sum()
+st.subheader("Missing Values")
 
-    null_df = pd.DataFrame({
-        "Column": nulls.index,
-        "Nulls": nulls.values
-    })
+nulls = df.isnull().sum()
 
-    st.dataframe(null_df)
+null_df = pd.DataFrame({
+    "Column": nulls.index,
+    "Nulls": nulls.values
+})
 
-    show_null_chart(null_df)
+st.dataframe(null_df)
+
+show_null_chart(null_df)

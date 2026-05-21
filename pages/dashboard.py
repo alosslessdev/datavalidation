@@ -3,33 +3,38 @@ import pandas as pd
 
 from validations.gx_validator import validate_dataset
 
+st.set_page_config(page_title="Dashboard", layout="wide")
 
-def show_dashboard(df):
+st.header("Dashboard")
 
-    st.header("Dashboard")
+if "df" not in st.session_state:
+    st.warning("No dataset loaded. Go to the main page and upload a CSV file.")
+    st.stop()
 
-    total_rows = len(df)
-    total_columns = len(df.columns)
+df = st.session_state["df"]
 
-    validation_results = validate_dataset(df)
+total_rows = len(df)
+total_columns = len(df.columns)
 
-    total_expectations = len(validation_results)
+validation_results = validate_dataset(df)
 
-    successful = sum(r["success"] for r in validation_results)
+total_expectations = len(validation_results)
 
-    quality_score = round(
-        (successful / total_expectations) * 100,
-        2
-    )
+successful = sum(r["success"] for r in validation_results)
 
-    col1, col2, col3 = st.columns(3)
+quality_score = round(
+    (successful / total_expectations) * 100,
+    2
+)
 
-    col1.metric("Rows", total_rows)
-    col2.metric("Columns", total_columns)
-    col3.metric("Quality Score", f"{quality_score}%")
+col1, col2, col3 = st.columns(3)
 
-    st.subheader("Validation Results")
+col1.metric("Rows", total_rows)
+col2.metric("Columns", total_columns)
+col3.metric("Quality Score", f"{quality_score}%")
 
-    results_df = pd.DataFrame(validation_results)
+st.subheader("Validation Results")
 
-    st.dataframe(results_df)
+results_df = pd.DataFrame(validation_results)
+
+st.dataframe(results_df)
